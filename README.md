@@ -16,6 +16,8 @@ Level 1 will also give the player the opportunity to change the timescale so tha
 
 ## Technical Overview
 
-• The game was written in the Java programming language.
-• The game only depends upon the Java standard library and the Bagel library (as well as Bagel’s dependencies).
-• The game was developed using IntelliJ IDEA.
+The game was written in the Java programming language.
+
+The game was developed using the Bagel library (https://people.eng.unimelb.edu.au/mcmurtrye/bagel-doc/).
+
+The game was developed using IntelliJ IDEA.
