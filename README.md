@@ -1,23 +1,89 @@
-# ShadowDimension2022
+# ShadowDimension
 
-A fantasy role-playing game called ShadowDimension using the Java programming language.
+A 2D fantasy role-playing game developed in Java using the Bagel game engine. Players control Fae, a character on a mission to save her father and hometown from evil creatures from another dimension.
 
-## Game Overview
+## 🎮 Game Overview
 
-“A dark evil has arrived in your hometown. A group of government scientists have opened a gate in their laboratory to another dimension called the Over Under. The Over Under is ruled by Navec (an evil creature of immense power) and his henchmen are called demons. The scientists thought they could control these creatures but alas they failed and are being held captive in the Over Under. Navec has created sinkholes that will destroy the lab and is planning on eventually destroying your world.
+In ShadowDimension, you play as Fae, the daughter of a scientist. Your father and other government scientists have accidentally opened a portal to a dangerous dimension called the Over Under, ruled by an evil creature named Navec. The scientists are now held captive, and Navec is creating sinkholes that threaten to destroy your world.
 
-The player’s name is Fae, the daughter of one of the scientists. In order to save your father and your town, you need to avoid the sinkholes, find the gate in the lab and defeat Navec & his demons in the Over Under...”
+The game consists of two levels:
+- **Level 0**: Navigate through the laboratory while avoiding walls and sinkholes
+- **Level 1**: Face off against demons and their leader Navec in the Over Under dimension
 
-The game features two levels : Level 0 is in the lab and Level 1 is in the Over Under. In Level 0, the player will be able to control Fae who has to move around the walls and avoid any sinkholes that are in the lab. If the player falls into a sinkhole, the player will lose health points. To finish the level, the player has to get to the gate, located in the bottom right of the window. If the player’s health reduces to 0, the game ends. You have already implemented Level 0 in Project 1 (the only change required is to the winning message screen which is explained later).
+## 🚀 Features
 
-When the player finishes Level 0, Level 1 starts - Fae is now in the Over Under. To win the level and the game, the player must fight and defeat Navec. However, the player has to deal with more sinkholes and demons too. The player can cause damage to the demons and Navec when the player presses a certain key. Likewise, the demons and Navec can cause damage to the player. The player will also have to move around trees (they don’t cause any damage like the walls in Level 0).
+- Two distinct game levels with different challenges
+- Dynamic combat system
+- Health management system
+- Enemy AI with different behavior patterns
+- Adjustable game speed (timescale) for varying difficulty
+- Collision detection system
+- Status effects (invincibility frames)
 
-Level 1 will also give the player the opportunity to change the timescale so that the difficulty of the game can be changed. Pressing a certain key will increase/decrease the speed of the demons and Navec (this is explained in more detail later). Like in Level 0, the game will end if the player’s health reduces to 0 or less.
+## 🎯 Game Controls
 
-## Technical Overview
+- **Arrow Keys**: Move Fae around the game world
+- **A**: Attack enemies (Level 1)
+- **L**: Speed up enemy movement
+- **K**: Slow down enemy movement
+- **Space**: Start game/Start next level
+- **Escape**: Exit game
 
-The game was written in the Java programming language.
+## 🛠 Technical Details
 
-The game was developed using the Bagel library (https://people.eng.unimelb.edu.au/mcmurtrye/bagel-doc/).
+### Built With
+- Java
+- [Bagel Game Engine](https://people.eng.unimelb.edu.au/mcmurtrye/bagel-doc/)
 
-The game was developed using IntelliJ IDEA.
+### Architecture
+The game follows object-oriented programming principles with a clear class hierarchy:
+
+- Abstract base classes:
+  - `GameEntity`: Base for all stationary objects
+  - `MovingEntity`: Base for all moving characters
+  - `Enemy`: Base for hostile entities
+
+- Main game classes:
+  - `ShadowDimension`: Main game controller
+  - `Level0` & `Level1`: Level-specific logic
+  - `Player`: Player character (Singleton pattern)
+  - `Demon` & `Navec`: Enemy types
+
+### Key Components
+
+1. **Entity System**
+   - Stationary entities (Walls, Trees, Sinkholes)
+   - Moving entities (Player, Demons, Navec)
+   - Collision detection system
+
+2. **Combat System**
+   - Attack mechanics
+   - Damage calculation
+   - Health management
+   - Invincibility frames
+
+3. **Time Control System**
+   - Adjustable game speed
+   - Attack cooldowns
+   - Status effect durations
+
+## 🔧 Building and Running
+
+1. Ensure you have Java 11 or higher installed
+2. Clone the repository
+3. Build using Maven:
+```bash
+mvn clean package
+```
+4. Run the game:
+```bash
+java -jar target/bagel-0.1-SNAPSHOT.jar
+```
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Feel free to fork the project and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
